@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="설문을 시작하시겠습니까?"/>
+    <CheckBox android:id="@+id/ch_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시작함"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="선호하는 배달 음식은?"/>
+    <RadioGroup android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/group">
+        <RadioButton android:id="@+id/ko"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="한식"
+            android:textSize="20sp"/>
+        <RadioButton android:id="@+id/ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="중식"
+            android:textSize="20sp"/>
+        <RadioButton android:id="@+id/bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="분식"
+            android:textSize="20sp"/>
+        <RadioButton android:id="@+id/ni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="야식"
+            android:textSize="20sp"/>
+    </RadioGroup>
+    <Button android:id="@+id/set" android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택초기화"
+        android:textSize="20sp"/>
+    <ImageView android:id="@+id/img" android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ko"/>
+
+</LinearLayout>
