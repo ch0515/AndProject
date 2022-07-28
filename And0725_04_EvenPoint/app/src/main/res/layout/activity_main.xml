@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText   android:id="@+id/one_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <EditText android:id="@+id/two_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+    <Button android:id="@+id/even_sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="짝수의 합 구하기"
+        android:layout_margin="10dp"/>
+    <Button android:id="@+id/Ca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가용 포인터 계산"
+        android:layout_margin="10dp"/>
+    <TextView android:id="@+id/sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="50sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="50sp"/>
+
+
+</LinearLayout>
