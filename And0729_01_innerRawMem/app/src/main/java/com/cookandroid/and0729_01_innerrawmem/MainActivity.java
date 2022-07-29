@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 Button btnInnerRead, btnInnerWrite, btnRawRead;
@@ -30,7 +31,7 @@ EditText edtData;
                 try {
                     FileOutputStream outFs = openFileOutput("fileTest.txt", Context.MODE_PRIVATE); //파일 쓰기용으로 open
                     String str = "안녕 오늘 안드로이드 수업 재미업ㅂㅄ다.";
-                    String str2 = edtData.getText().toString();
+                    //String str2 = edtData.getText().toString();
                     outFs.write(str.getBytes());
                     outFs.close();
                     Toast.makeText(getApplicationContext(),"fileTest파일 생성됨",Toast.LENGTH_SHORT).show();
@@ -48,6 +49,20 @@ EditText edtData;
                     inFs.read(str);
                     edtData.setText(new String(str));
                     inFs.close();
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(),"파일 없음",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        btnRawRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    InputStream ins = getResources().openRawResource(R.raw.test);
+                    byte[] in = new byte[ins.available()];
+                    ins.read(in);
+                    edtData.setText(new String(in));
+                    ins.close();
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"파일 없음",Toast.LENGTH_SHORT).show();
                 }
