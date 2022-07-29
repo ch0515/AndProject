@@ -19,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-TextView edtName, edtTel;
-Button btn;
+    TextView edtName, edtTel;
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,34 +42,42 @@ Button btn;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.TelOk:
-                AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
-                dlg.setTitle("전화번호 등록");
-                dlg.setIcon(R.mipmap.ic_launcher_round);
-                final View dlgView = (View)View.inflate(MainActivity.this, R.layout.dlg, null);
-                dlg.setView(dlgView);
-                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        EditText edName = dlgView.findViewById(R.id.edtName);
-                        EditText edTel = dlgView.findViewById(R.id.edtTel);
-                        String str = edtName.getText().toString() + "\n"+edName.getText().toString();
-                        String str2 = edtTel.getText().toString() + "\n"+edTel.getText().toString();
-                        edtName.setText(str);
-                        edtTel.setText(str2);
-                    }
-                });
-                dlg.show();
-                return true;
-
-            case R.id.Color:
-                edtName.setTextColor(Color.parseColor("#ff0000"));
-                edtTel.setTextColor(Color.parseColor("#ff0000"));
-                return true;
-            default:
-                Toast.makeText(getApplicationContext(), "선택안됨",Toast.LENGTH_SHORT).show();
-                return false;
+        if(item.getItemId() == R.id.TelOk){
+            AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
+            dlg.setTitle("전화번호 등록");
+            dlg.setIcon(R.mipmap.ic_launcher_round);
+            final View dlgView = (View)View.inflate(MainActivity.this, R.layout.dlg, null);
+            dlg.setView(dlgView);
+            dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    EditText edName = dlgView.findViewById(R.id.edtName);
+                    EditText edTel = dlgView.findViewById(R.id.edtTel);
+                    String str = edtName.getText().toString() + "\n"+edName.getText().toString();
+                    String str2 = edtTel.getText().toString() + "\n"+edTel.getText().toString();
+                    edtName.setText(str);
+                    edtTel.setText(str2);
+                }
+            });
+            dlg.show();
+            return true;
+        }else{
+            switch (item.getItemId()) {
+                case R.id.itemBlue:
+                    edtName.setTextColor(Color.parseColor("#0004CD"));
+                    edtTel.setTextColor(Color.parseColor("#0004CD"));
+                    return true;
+                case R.id.itemGreen:
+                    edtName.setTextColor(Color.parseColor("#4EFD53"));
+                    edtTel.setTextColor(Color.parseColor("#4EFD53"));
+                    return true;
+                case R.id.itemDefault:
+                    edtName.setTextColor(Color.parseColor("#000000"));
+                    edtTel.setTextColor(Color.parseColor("#000000"));
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 

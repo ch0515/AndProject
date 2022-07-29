@@ -3,5 +3,14 @@
     <item android:id="@+id/TelOk"
         android:title="전화번호 등록"/>
     <item android:id="@+id/Color"
-        android:title="빨간색으로 바꾸기"/>
+        android:title="색깔바꾸기">
+        <menu>
+            <item android:id="@+id/itemBlue"
+                android:title="파랑"/>
+            <item android:id="@+id/itemGreen"
+                android:title="초록"/>
+            <item android:id="@+id/itemDefault"
+                android:title="기본색"/>
+        </menu>
+    </item>
 </menu>
