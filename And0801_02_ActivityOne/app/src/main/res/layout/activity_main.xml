@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <RadioGroup android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton android:id="@+id/radbt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="두번째 액티비티"/>
+        <RadioButton android:id="@+id/radbt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="세번째 액티비티"/>
+    </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtContent"
+        android:hint="넘겨줄 내용 입력하라"/>
+    <Button android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="새 화면 열기"/>
+
+</LinearLayout>
